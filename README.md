@@ -42,62 +42,91 @@ Professional Patterns: Singleton, Observer, and Factory patterns for scalable ar
 
 ### Core C++ Concepts Demonstrated
 
-Concept	Implementation	File
-
-RAII	Smart pointers, lock guards, automatic cleanup	All files
-
-STL Mastery	Algorithms, containers, utilities	Portfolio.cpp
-
-Multithreading	std::thread, mutex, atomic, condition_variable	MarketDataFeed.cpp
-
-Memory Management	Smart pointers, rule of five	Stock.h
-
-Design Patterns	Singleton, Observer, Factory	MarketDataFeed.h
+| Concept | Implementation | File |
+|---------|----------------|------|
+| **RAII** | Smart pointers, lock guards, automatic cleanup | All files |
+| **STL Mastery** | Algorithms, containers, utilities | Portfolio.cpp |
+| **Multithreading** | std::thread, mutex, atomic, condition_variable | MarketDataFeed.cpp |
+| **Memory Management** | Smart pointers, rule of five | Stock.h |
+| **Design Patterns** | Singleton, Observer, Factory | MarketDataFeed.h |
 
 ### Design Patterns Used
 
-Singleton Pattern: MarketDataFeed - Ensures single global market data source
+| Pattern | Purpose | Implementation |
+|---------|---------|----------------|
+| **Singleton Pattern** | Ensures single global market data source | `MarketDataFeed::getInstance()` |
+| **Observer Pattern** | Real-time notifications to multiple subscribers | `PriceObserver` interface |
+| **Factory Pattern** | Centralized object creation with validation | `createStock()` method |
+| **RAII Pattern** | Automatic resource management | Smart pointers, lock guards |
 
-Observer Pattern: PriceObserver - Real-time notifications to multiple subscribers
+## 🎓 Educational Value
 
-Factory Pattern: createStock() - Centralized object creation with validation
+| Developer Level | Learning Focus | Key Takeaways |
+|-----------------|----------------|---------------|
+| **Junior Developers** | Professional C++ coding standards | Memory management, basic patterns |
+| **Intermediate Developers** | Design patterns in context | Thread-safe design, advanced STL |
+| **Senior Developers** | System architecture | Code review, mentoring examples |
 
-RAII Pattern: Automatic resource management throughout codebase
+## 🔧 Extensibility Options
 
-## 🚀 Quick Start
-Prerequisites
-C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2017+)
+| Extension | Description | Implementation Difficulty |
+|-----------|-------------|---------------------------|
+| **Database Persistence** | Add SQLite/PostgreSQL for data storage | Medium |
+| **Real Market Data APIs** | Connect to Yahoo Finance or Alpha Vantage | High |
+| **Graphical UI** | Add Qt/QML interface | Medium |
+| **Extended Risk Models** | VAR, Monte Carlo simulations | High |
+| **Order Execution System** | Simulated trading engine | High |
 
-CMake 3.15+
+## 📊 Performance Features
 
-Threading support (usually included)
+| Feature | Benefit | Implementation |
+|---------|---------|----------------|
+| **Lock-free operations** | Reduced contention | `std::atomic` variables |
+| **Efficient STL usage** | Optimal algorithms | `std::transform`, `std::accumulate` |
+| **Minimal copying** | Better performance | Move semantics |
+| **Thread coordination** | Efficient waiting | `std::condition_variable` |
 
-### Build & Run
-```bash
-# Clone and build
-git clone https://github.com/yourusername/stock-market-monitor.git
-cd stock-market-monitor
-mkdir build && cd build
-cmake ..
-make
-# Run the application
-./StockMarketMonitor
-Sample Output
-text
-=== Stock Market Monitor Started ===
-Added 10 shares of AAPL
-Added 2 shares of GOOGL
-Set risk limit for AAPL: $160
-Set risk limit for GOOGL: $2800
-Market data feed started
-Stock AAPL updated to: $152.34
-Stock GOOGL updated to: $2712.45
-Top performers: GOOGL AAPL 
-Portfolio value: $30297.3
-Portfolio risk: 0%
----
-🚨 RISK WARNING: AAPL price $161.25 exceeds limit $160
-```
+## 🚀 Quick Start Commands
+
+| Step | Command | Description |
+|------|---------|-------------|
+| **1. Clone** | `git clone https://github.com/Sarvinp/StockMarketMonitor.git` | Get the source code |
+| **2. Build** | `mkdir build && cd build && cmake .. && make` | Compile the project |
+| **3. Run** | `./StockMarketMonitor` | Start the application |
+
+## 📁 Project Structure
+
+| Directory/File | Purpose |
+|----------------|---------|
+| `include/Stock.h` | Stock data model with RAII |
+| `include/Portfolio.h` | Portfolio management with STL |
+| `include/MarketDataFeed.h` | Singleton market data source |
+| `include/RiskManager.h` | Observer pattern implementation |
+| `src/Stock.cpp` | Price simulation logic |
+| `src/Portfolio.cpp` | STL algorithms demonstration |
+| `src/MarketDataFeed.cpp` | Multithreading implementation |
+| `src/RiskManager.cpp` | Risk monitoring logic |
+| `src/main.cpp` | Application entry point |
+| `CMakeLists.txt` | Build configuration |
+
+## 💡 Sample Output Preview
+
+| Component | Sample Output |
+|-----------|---------------|
+| **Market Data** | `Stock AAPL updated to: $152.34` |
+| **Portfolio** | `Top performers: GOOGL AAPL` |
+| **Risk Management** | `🚨 RISK WARNING: AAPL price $161.25 exceeds limit $160` |
+| **Performance** | `Portfolio value: $30297.3, Portfolio risk: 0%` |
+
+## 🎯 System Requirements
+
+| Requirement | Minimum | Recommended |
+|-------------|---------|-------------|
+| **C++ Standard** | C++17 | C++20 |
+| **Compiler** | GCC 7+, Clang 5+, MSVC 2017+ | GCC 11+, Clang 12+ |
+| **Memory** | 512 MB RAM | 2 GB RAM |
+| **Storage** | 100 MB | 1 GB |
+| **Threading** | POSIX Threads | Standard C++ Threads |
 
 ## 📁 Project Structure
 ```text
@@ -130,50 +159,6 @@ STL algorithms and containers usage
 Design patterns in real-world scenarios
 
 Professional C++ architecture and patterns
-
-## 🎓 Educational Value
-### For Junior Developers
-Learn professional C++ coding standards
-
-Understand memory management best practices
-
-See real multithreading implementation
-
-### For Intermediate Developers
-Study design patterns in context
-
-Learn thread-safe class design
-
-Understand modern C++ features
-
-### For Senior Developers
-Reference architecture for financial systems
-
-Pattern implementation examples
-
-Code review and mentoring material
-
-## 🔧 Extensibility
-The architecture supports easy extensions:
-
-Add database persistence
-
-Implement real market data APIs
-
-Add graphical UI with Qt
-
-Extend risk models
-
-Add order execution system
-
-## 📊 Performance Features
-Lock-free operations where possible
-
-Efficient STL algorithm usage
-
-Minimal copying with move semantics
-
-Thread coordination with condition variables
 
 ## 🤝 Contributing
 Contributions welcome! Areas for improvement:
